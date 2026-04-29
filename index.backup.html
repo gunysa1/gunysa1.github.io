@@ -921,37 +921,8 @@ jQuery(document).ready(init);
 <script type="text/javascript">
     jQuery(document).ready( function(){
         var $ = jQuery;
-        
-        // 1. Prevent dead Weebly links from breaking the page
-        $('.wsite-menu-default a, .wsite-menu a, .baamboo-responsive-nav a').click(function(){ 
-            var href = $(this).attr('href'); 
-            if(href=='http://javascript:void(0)' || href=='http://javascript:;' || href=='http://#'){ 
-                return false; 
-            } 
-        });
-
-        // 2. Fix Desktop Dropdown Menus
-        $('.wsite-menu-item-wrap, .wsite-menu-subitem-wrap').hover(
-            function() {
-                // Show dropdown on hover
-                $(this).children('.wsite-menu-wrap').stop(true, true).slideDown(200);
-            },
-            function() {
-                // Hide dropdown when mouse leaves
-                $(this).children('.wsite-menu-wrap').stop(true, true).slideUp(200);
-            }
-        );
-
-        // 3. Fix Mobile Menu Sub-items
-        $('#navmobile .wsite-menu-item-wrap > a, #navmobile .wsite-menu-subitem-wrap > a').click(function(e){
-            var $submenu = $(this).siblings('.wsite-menu-wrap');
-            // If the clicked link has a dropdown underneath it, slide it open
-            if($submenu.length > 0) {
-                e.preventDefault();
-                $submenu.stop(true, true).slideToggle(200);
-            }
-        });
-    });
+        $('.wsite-menu-default a, .wsite-menu a, .baamboo-responsive-nav a').click(function(){ var href = $(this).attr('href'); if(href=='http://javascript:void(0)' || href=='http://javascript:;' || href=='http://#'){ return false; } });
+    })
 </script>
     <div id="customer-accounts-app"></div>
     <script src="https://cdn2.editmysite.com/js/site/main-customer-accounts-site9136.js?buildtime=1776366455"></script>
